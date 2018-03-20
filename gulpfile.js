@@ -5,7 +5,9 @@
  */
 const gulp = require('gulp');
 const gutil = require('gulp-util');
+const minify = require('gulp-minify');
 const plumber = require('gulp-plumber');
+const prettier = require('gulp-prettier');
 
 /**
  * タスクランナー用設定
@@ -25,9 +27,6 @@ const filePattern = {
 /**
  * JavaScriptをコードフォーマットするタスク
  */
-const prettier = require('gulp-prettier');
-const minify = require('gulp-minify');
-
 gulp.task('javascript', () => {
   return gulp.src(filePattern.javascript, { base: baseDir.src })
     .pipe(plumber())
@@ -69,6 +68,6 @@ gulp.task('default', () => {
 
     タスク名一覧:
         default - (またはタスク名を指定しない場合)このメッセージを表示します
-        watch   - HTML, SASS, JavaScript ファイルを監視してタスクを実行します
+        watch   - JavaScript ファイルを監視してタスクを実行します
   `);
 });
