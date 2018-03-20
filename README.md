@@ -6,11 +6,13 @@ jQueryオブジェクトに含まれる要素のheightまたはmin-heightを最�
 
 ```js
 // 基本形
+
 $('.sample').autoHeight();
 ```
 
 ```js
 // optionsを指定する場合
+
 $('.sample').autoHeight({
     minHeight: true
 });
@@ -26,6 +28,7 @@ $('.sample').autoHeight({
 
 ```js
 // 高さ揃えを解除する場合
+
 var $sample = $('.sample').autoHeight();
 $sample.autoHeight('reset');
 ```
@@ -35,6 +38,7 @@ $sample.autoHeight('reset');
 ### options (object)
 
 高さ揃えに関する設定
+
 以下の3つをプロパティとしてもつ
 
 #### minHeight (true/false)
@@ -48,14 +52,15 @@ $sample.autoHeight('reset');
 #### reset (true/false)
 
 高さを揃える前に、height(min-height)のインラインスタイルを解除するかどうか
+
 0または1の場合は、該当の要素すべての最大値で揃える
 
 ### reset (string)
 
-引数が文字列で'reset'であるとき、すでに高さ揃えが適用されていた場合、
-該当のインラインスタイルを解除する
+引数が文字列で'reset'であるとき、すでに高さ揃えが適用されていた場合、該当のインラインスタイルを解除する
 
 すでに高さ揃えが適用されているかどうかは、
+
 jQueryオブジェクトに $.fn.autoHeight.propNameToTrack のプロパティが存在するかで判定する
 
 ## デフォルト設定
