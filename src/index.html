@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <!-- title -->
+    <title>DEMO - jQuery AutoHeight</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            overflow: hidden;
+        }
+
+        .box {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+        }
+
+        #sample1 .box {
+            background-color: red;
+        }
+
+        #sample2 .box {
+            background-color: green;
+        }
+
+        #sample3 .box {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>jquery.autoHeight.js</h1>
+    <hr>
+    <h2>Height</h2>
+    <label for="run-auto-height-1">
+        <button type="button" name="run-random-height-1" id="run-random-height-1">Set Random Height</button>
+        <button type="button" name="run-auto-height-1" id="run-auto-height-1">Run Auto Height</button>
+        <button type="button" name="run-reset-auto-height-1" id="run-reset-auto-height-1">Reset Auto Height</button>
+    </label>
+    <div id="sample1" class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <hr>
+    <h2>Min-height</h2>
+    <label for="run-auto-height-2">
+        <button type="button" name="run-random-height-2" id="run-random-height-2">Set Random Min Height</button>
+        <button type="button" name="run-auto-height-2" id="run-auto-height-2">Run Auto Min Height</button>
+        <button type="button" name="run-reset-auto-height-2" id="run-reset-auto-height-2">Reset Auto Min Height</button>
+    </label>
+    <div id="sample2" class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="jquery.autoheight.js"></script>
+    <script>
+        $(function() {
+            var $sampleBox1 = $('#sample1 .box');
+            var $sampleBox2 = $('#sample2 .box');
+            var $sampleBox3 = $('#sample3 .box');
+
+            var setRandomHeight = function(el, prop) {
+                $(el).css(prop, Math.floor( Math.random() * (400 + 1 - 200) ) + 200);
+            };
+
+            $('#run-random-height-1').on('click', function() {
+                $sampleBox1.each(function() {
+                    setRandomHeight(this, 'height');
+                });
+            });
+
+            $('#run-random-height-2').on('click', function() {
+                $sampleBox2.each(function() {
+                    setRandomHeight(this, 'minHeight');
+                });
+            });
+
+            $('#run-auto-height-1').on('click', function() {
+                $sampleBox1.autoHeight();
+            });
+
+            $('#run-auto-height-2').on('click', function() {
+                $sampleBox2.autoHeight({
+                    minHeight: true
+                });
+            });
+
+            $('#run-reset-auto-height-1').on('click', function() {
+                $sampleBox1.autoHeight('reset');
+            });
+
+            $('#run-reset-auto-height-2').on('click', function() {
+                $sampleBox2.autoHeight('reset');
+            });
+        });
+    </script>
+</body>
+</html>
