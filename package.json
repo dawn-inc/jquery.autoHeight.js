@@ -1,7 +1,7 @@
 {
-  "name": "project-template",
-  "version": "1.0.29",
-  "description": "Project Template",
+  "name": "jquery.autoheight.js",
+  "version": "1.0.0",
+  "description": "",
   "scripts": {
     "gulp": "gulp"
   },
