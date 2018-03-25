@@ -1,10 +1,10 @@
 /*!
- * jquery.autoheight.js
+ * jquery.autoHeight.js
  *
  * Author: DAWN Inc.
  * Since:   2017-03-20
- * Update:  -
- * Version: 1.0.0
+ * Update:  2017-03-25
+ * Version: 1.0.1
  * License: MIT (http://www.opensource.org/licenses/mit-license.php, http://sourceforge.jp/projects/opensource/wiki/licenses%2FMIT_license)
  * Comment: 右記を参考に作成(https://github.com/tinybeans/jQueryAutoHeight)
  */
