@@ -1,6 +1,6 @@
 {
   "name": "jquery.autoHeight.js",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "scripts": {
     "gulp": "gulp"
@@ -13,7 +13,8 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-minify": "^2.1.0",
+    "gulp-cached": "^1.1.1",
     "gulp-plumber": "^1.1.0",
-    "gulp-prettier": "github:nozomuikuta/gulp-prettier#master"
+    "gulp-prettier": "github:dawn-inc/gulp-prettier#master"
   }
 }
