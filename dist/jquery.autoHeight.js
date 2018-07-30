@@ -3,8 +3,8 @@
  *
  * Author: DAWN Inc.
  * Since:   2017-03-20
- * Update:  2017-03-25
- * Version: 1.0.1
+ * Update:  2018-07-30
+ * Version: 1.0.4
  * License: MIT (http://www.opensource.org/licenses/mit-license.php, http://sourceforge.jp/projects/opensource/wiki/licenses%2FMIT_license)
  * Comment: 右記を参考に作成(https://github.com/tinybeans/jQueryAutoHeight)
  */
@@ -26,18 +26,26 @@
         var cssProp,
             heights = [],
             maxInRows = [],
-            propNameToTrack = $.fn.autoHeight.propNameToTrack;
+            propNameToTrack = $.fn.autoHeight.propNameToTrack,
+            modifiedCssProp;
 
         if (opts === 'reset') {
-            /**
-             * 揃えていたインラインCSSプロパティを解除
-             */
-            this.css($.data(this, propNameToTrack, cssProp), '');
+            modifiedCssProp = $.data(this, propNameToTrack, cssProp);
 
             /**
-             * 揃えていたCSSプロパティ名のキャッシュを削除
+             * すでにCSSプロパティが変更されていた場合のみ初期化
              */
-            $.removeData(this, propNameToTrack);
+            if (modifiedCssProp) {
+                /**
+                 * 揃えていたインラインCSSプロパティを解除
+                 */
+                this.css($.data(this, propNameToTrack, cssProp), '');
+
+                /**
+                 * 揃えていたCSSプロパティ名のキャッシュを削除
+                 */
+                $.removeData(this, propNameToTrack);
+            }
 
             /**
              * jQueryオブジェクトをチェーンして終了
